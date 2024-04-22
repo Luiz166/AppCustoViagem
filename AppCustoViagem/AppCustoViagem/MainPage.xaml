@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCustoViagem.MainPage" 
+             BackgroundColor="#D4d4d4"
+             Title="Custo de Viagem"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Lista de Pedágios" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Text="Origem:" />
+        <Entry x:Name="txtOrigem" Grid.Row="0" Grid.Column="1" Placeholder="Nome Cidade Origem" />
+
+        <Label Grid.Row="1" Grid.Column="0" Text="Destino:" />
+        <Entry x:Name="txtDestino" Grid.Row="1" Grid.Column="1" Placeholder="Nome do Destino"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Consumo do Veículo:" Style="{StaticResource Subtitulo}" />
+        
+        <Label Grid.Row="3" Grid.Column="0" Text="Distância:" />
+        <Entry x:Name="txtDistancia" Grid.Row="3" Grid.Column="1" Keyboard="Numeric" Placeholder="Km" />
+
+        <Label Grid.Row="4" Grid.Column="0" Text="Consumo:" />
+        <Entry x:Name="txtConsumo" Grid.Row="4" Grid.Column="1" Keyboard="Numeric" Placeholder="Km/L" />
+
+        <Label Grid.Row="5" Grid.Column="0" Text="Valor do Combustível:" />
+        <Entry x:Name="txtValorCombustivel" Grid.Row="5" Grid.Column="1" Keyboard="Numeric" Placeholder="R$ 0,00" />
+
+        <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+               Text="Pedágio:" Style="{StaticResource Subtitulo}" />
+
+        <Label Grid.Row="7" Grid.Column="0" Text="Valor:" />
+        <StackLayout Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
+            <Entry x:Name="txtValorPedagio" Keyboard="Numeric" HorizontalOptions="FillAndExpand" Placeholder="R$ 0,00" />
+            <Button Text="Add"  Clicked="Button_Clicked_Add" />
+        </StackLayout>
+
+
+
+        <StackLayout Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" 
+                     Orientation="Horizontal" Padding="10"
+                     HorizontalOptions="Center">
+            <Button Text="Calcular" Clicked="Button_Clicked_Calcular" />
+            <Button Text="Limpar" Clicked="Button_Clicked_Limpar" Style="{StaticResource ButtonDel}" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
